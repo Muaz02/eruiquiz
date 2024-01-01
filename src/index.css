@@ -93,6 +93,7 @@ p /*body text 2*/{
 /* HEADER STYLING */
 
 header {
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
