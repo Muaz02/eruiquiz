@@ -94,6 +94,7 @@ p /*body text 2*/{
 
 header {
   margin: 0;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
