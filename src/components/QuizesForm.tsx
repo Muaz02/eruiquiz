@@ -62,11 +62,10 @@ const QuizesForm = forwardRef<HTMLFormElement, QuizFormProps>(({ isActive,setIsA
 
 
 
-    function handleSubmit(e:React.MouseEvent<HTMLButtonElement, MouseEvent>){
-        e.stopPropagation()
+    function handleSubmit(){
         setIsActive(!isActive)
         window.scrollTo(0, 0);
-        return false
+        return null
     }
 
     return (

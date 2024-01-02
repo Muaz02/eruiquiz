@@ -3,17 +3,19 @@ import { useNavigate,Form } from 'react-router-dom'
 
 export default function Home() {
     const navigate = useNavigate()
-    const formRef = useRef<HTMLFormElement | undefined>(undefined)
+    const formRef = useRef<HTMLFormElement>(null)
 
-    function handleSubmit(e:React.MouseEvent<HTMLButtonElement, MouseEvent>){
+    function handleSubmit(e:React.FormEvent<HTMLFormElement>){
         e.stopPropagation()
         e.preventDefault()
-        const formData = new FormData(formRef.current)
-        const category = formData.get('category')
-        if(category){
-            navigate(`/quiz?category=${category}`)
+        if(formRef.current){
+            const formData = new FormData(formRef.current)
+            const category = formData.get('category')
+            if(category){
+                navigate(`/quiz?category=${category}`)
+            }
+            else console.log('chose a category!')
         }
-        else console.log('chose a category!')
     }
 
     return (
