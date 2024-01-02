@@ -379,6 +379,7 @@ input[type=radio]{
   }
 
   .choice--container {
+    margin-top: 20px;
     width: 33.3%;
   }
 
