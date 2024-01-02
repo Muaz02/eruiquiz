@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import QuizesForm from "../components/QuizesForm";
 import Loading from "./Loading";
 
-type DataPromise = {
+interface DataPromise {
     quizzes: Promise<Response>
 }
 
@@ -19,7 +19,7 @@ export async function action({ request } : ActionFunctionArgs){
     const formData = await request.formData()
     if(formData){
         let score = 0
-        formData.forEach(input=>{
+        formData.forEach((input:FormDataEntryValue)=>{
             if(input === 'true'){
                 score ++
               }

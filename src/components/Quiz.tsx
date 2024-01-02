@@ -42,7 +42,7 @@ export default function Quiz(props:QuizProps){
                                 className={!props.isActive?choice.isCorrect?'correct':'wrong':''}
                                 id={`${props.id}-${index + 1}`} 
                                 name={`answer-${props.id}`} 
-                                value={choice.isCorrect}
+                                value={`${choice.isCorrect}`}
                                 disabled={!props.isActive}
                             />
                             <label
@@ -71,7 +71,7 @@ export default function Quiz(props:QuizProps){
                         type="radio"
                         id='default-choice'
                         name={`answer-${props.id}`} 
-                        value={false}
+                        value='false'
                         defaultChecked
                     />
             </div>
